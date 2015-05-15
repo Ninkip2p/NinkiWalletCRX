@@ -50,8 +50,8 @@
                         <div class="text-center">
                             <div>
                                 <p>
-                                    Print out or write down your cold key phrase. This is a backup of your offline private
-                                    key.</p>
+                                    Print out or write down your offline key phrase. This is a backup of your offline
+                                    private key.</p>
                                 <p>
                                     <u>This will be your last opportunity to backup this information.</u>
                                 </p>
@@ -59,7 +59,7 @@
                             <div class="m-md">
                                 <a href="#" id="printCold" class="btn btn-default"><i class="fa fa-print"></i>&nbsp;Print</a>
                             </div>
-                            <div class="list-group-item bg-info text-white">
+                            <div class="h4 list-group-item bg-info text-white">
                                 <div id="coldWalletPhrase">
                                 </div>
                             </div>
@@ -75,14 +75,14 @@
                         <div class="text-center">
                             <div>
                                 <p>
-                                    Backup your hot wallet phrase. This is a backup of your online private key and is
+                                    Backup your online key phrase. This is a backup of your online private key and is
                                     encrypted with your password. Write down the phrase incase you forget your password.</p>
                             </div>
                             <div class="m-md">
                                 <a id="backupHot" href="#" class="btn btn-default"><i class="fa fa-save"></i>&nbsp;Save
                                     Backup</a> <span id="errbackuphot"></span>
                             </div>
-                            <div class="list-group-item bg-warning">
+                            <div class="h4 list-group-item bg-warning">
                                 <p id="hotWalletPhrase">
                                 </p>
                             </div>
@@ -101,8 +101,7 @@
                         </div>
                         <div id="twoFactorQr">
                             <ul>
-                                <li class="list-group-item">First, scan this QR code using your authenticator of choice,
-                                    such as Google Authenticator or Authy.</li>
+                                <li class="list-group-item">First, scan this QR code using Google Authenticator</li>
                             </ul>
                         </div>
                         <div class="text-center">
@@ -121,8 +120,8 @@
                             </div>
                             <div class="m-l-md m-r-md">
                                 <div class="form-group">
-                                    <input id="twoFactorCodeCheck" data-required="true" class="form-control" autocomplete="off"
-                                        name="twoFactorCodeCheck" data-type="digits" data-rangelength="[6,6]" class="form-control"
+                                    <input id="twoFactorCodeCheck" data-parsley-required="true" class="form-control" autocomplete="off"
+                                        name="twoFactorCodeCheck" data-parsley-type="digits" data-parsley-rangelength="[6,6]" class="form-control"
                                         placeholder="Two Factor Code" />
                                 </div>
                                 <div class="form-group">
@@ -141,8 +140,8 @@
                                 Check your email and enter your validation token below</p>
                             <div class="list-group">
                                 <div class="list-group-item">
-                                    <input id="txtEmailToken" class="form-control" autocomplete="off" data-rangelength="[64,64]"
-                                        data-type="alphanum" data-required="true" name="txtEmailToken" placeholder="Enter token" />
+                                    <input id="txtEmailToken" class="form-control" autocomplete="off" data-parsley-rangelength="[64,64]"
+                                        data-parsley-type="alphanum" data-parsley-required="true" name="txtEmailToken" placeholder="Enter token" />
                                 </div>
                                 <div class="list-group-item">
                                     <div id="valemailerror" class="alert alert-danger" style="display: none">
@@ -173,23 +172,246 @@
             <div class="container aside-xl">
                 <section class="m-b-lg">
                     <div class="list-group-item text-center">
-                        <img src="images/ninki.png" width="200" height="150" />
+                        <img src="images/ninki.png" width="200" height="150">
                     </div>
-                    <div class="list-group-item text-center">
-                        <span class="h4">Welcome to Ninki Wallet</span></div>
-                    <div class="list-group-item text-center">
-                        New to Ninki? Create an account
+                    <div class="list-group-item text-center m-t-sm" style="display: none">
+                        <span class="h3 font-thin">Welcome to Ninki Wallet</span></div>
+                    <div class="h4 font-thin list-group-item text-center m-t-sm padder-v">
+                        New to Ninki?
                         <div class="m-t-sm text-center">
                             <button type="button" class="btn btn-primary btn-block" id="btnCreateInit">
                                 Create an account</button></div>
                     </div>
-                    <div class="list-group-item text-center">
+                    <div class="h4 font-thin list-group-item text-center m-t-sm padder-v">
+                        Already signed up on Mobile?
+                        <div class="m-t-sm text-center">
+                            <button type="button" class="btn btn-primary btn-block" id="btnMobileLogin">
+                                Setup Desktop App</button></div>
+                    </div>
+                    <div class="list-group-item m-t-sm">
+                        <div class="">
+                            <a href="#" id="exuserdesk" class="">Already have the desktop app?</a>
+                        </div>
+                    </div>
+                    <div class="m-t-md">
+                        <a href="#" id="exusercancel" class="pull-right">cancel</a>
+                    </div>
+                    <!--<div class="list-group-item text-center">
                         Already signed up? Login below
                         <div class="m-t-sm text-center">
                             <button type="button" class="btn btn-primary btn-block" id="btnLoginInit">
-                                Login</button></div>
-                    </div>
+                                Standard Login</button></div>
+            </div>-->
                 </section>
+            </div>
+        </section>
+    </div>
+    <div id="mobilelogin" style="display: none">
+        <section class="m-t-lg wrapper-md animated fadeInDown">
+            <div class="container" style="width: 400px">
+                <div class="list-group-item text-center">
+                    <img src="images/ninki.png" width="200" height="150" />
+                </div>
+                <div id="mobsetups1">
+                    <div class="list-group-item">
+                        <div class="text-center">
+                            <div class="h4 font-thin" style="line-height: 1.5;">
+                                Open your mobile app.
+                                <br />
+                                <span class="text-success-dker">Go to Settings > Security Checklist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="h4 font-thin" style="line-height: 1.5;">
+                            Complete the following steps in the app:
+                        </div>
+                        <div>
+                            <div class="block padder-v">
+                                <span class="clear"><span class="h4 block m-t-xs">Backup your Keys</span> <small
+                                    class="text-muted">Secure your funds</small> </span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="block">
+                                <span class="clear"><span class="h4 block m-t-xs">Validate your Email</span> <small
+                                    class="text-muted">Receive critical account info</small> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <button type="button" class="btn btn-primary btn-block" id="btnMobSetups1">
+                            Next</button></div>
+                </div>
+                <div id="mobsetups2" style="display: none">
+                    <div id="mobsetups2instruct" class="list-group-item text-center">
+                        <div class="">
+                            <div class="padder-v h4 font-thin" style="line-height: 1.5;">
+                                Tap on 'Setup the Desktop App' and follow the instructions</div>
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <div class="list-group-item" id="onlinekeyentererror" style="display: none">
+                            <div class="alert alert-danger">
+                                <i class="fa fa-ban-circle"></i><strong>Error</strong> <span id="onlinekeyentererrormessage">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <textarea class="form-control" placeholder="Enter your online key phrase" rows="6"
+                                id="txtOnlineKeyPhrase"></textarea>
+                        </div>
+                        <div class="list-group-item">
+                            <button type="button" class="btn btn-primary btn-block" id="btnOnlineKey">
+                                Next</button></div>
+                    </div>
+                    <div class="list-group-item">
+                        <a href="#" id="btnLoadFromBackup" class="">Load from backup file / guid</a>
+                    </div>
+                    <div class="m-t-md">
+                        <a href="#" id="btnmoblogcancel" class="pull-right">cancel</a>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <div id="mobileauth" style="display: none">
+        <section class="m-t-lg wrapper-md animated fadeInDown">
+            <div class="container" style="width: 400px">
+                <div class="list-group-item text-center">
+                    <img src="images/ninki.png" width="200" height="150" />
+                </div>
+                <div class="list-group-item text-center">
+                    <i class="fa fa-mobile fa-5x"></i>
+                </div>
+                <div class="list-group-item text-center">
+                    <div class="h4 m-b font-thin" style="line-height: 1.5em;">
+                        Touch 'Authorize' on your mobile app to authorize access</div>
+                </div>
+                <div class="list-group-item">
+                    <span id="tmpToken"></span>
+                    <button type="button" class="btn btn-primary btn-block" id="btnMobDeviceAuth" style="display: none">
+                        Auth</button></div>
+                <div class="m-t-md">
+                    <a href="#" class="pull-right cancelmobset">cancel</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="mobilepassword" style="display: none">
+        <section class="m-t-lg wrapper-md animated fadeInDown">
+            <div class="container" style="width: 400px">
+                <div class="list-group-item text-center">
+                    <img src="images/ninki.png" width="200" height="150" />
+                </div>
+                <form id="frmMobPwd" data-validate="parsley" class="form-horizontal">
+                <div id="mobemailopt" class="list-group-item">
+                    <input id="mobemail" class="form-control" type="email" autocomplete="off" data-parsley-type="email"
+                        data-parsley-required="true" name="mobemail" placeholder="Email" />
+                </div>
+                <div class="list-group-item text-center">
+                    <div class="h4 font-thin">
+                        Choose a strong password</div>
+                </div>
+                <div id="mobpwdcontainer">
+                    <div class="list-group-item">
+                        <div class="pwstrength_viewport_progress">
+                        </div>
+                        <input id="mobpwd" class="form-control" data-parsley-required="true" data-parsley-rangelength="[10,50]"
+                            name="mobpwd" type="password" placeholder="Enter a strong password" />
+                    </div>
+                    <div class="list-group-item">
+                        <input id="mobpwd1" class="form-control" data-parsley-equalto-message="Passwords do not match"
+                            data-parsley-required="true" data-parsley-equalto="#mobpwd" data-parsley-rangelength="[10,50]"
+                            name="mobpwd1" type="password" placeholder="Confirm your password" />
+                    </div>
+                    <div class="list-group-item">
+                        <button type="button" class="btn btn-primary btn-block" id="btnMobPwdConfirm">
+                            Confirm</button>
+                    </div>
+                    <div class="m-t-md">
+                        <a href="#" class="pull-right cancelmobset">cancel</a>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <div id="mobile2fa" class="tab-pane" style="display: none">
+        <section class="m-t-lg wrapper-md animated fadeInDown">
+            <div class="container" style="width: 400px">
+                <div class="list-group-item text-center">
+                    <img src="images/ninki.png" width="200" height="150" />
+                </div>
+                <div class="list-group-item text-center">
+                    <h4>
+                        Setup Two-Factor Authentication</h4>
+                </div>
+                <div class="list-group-item text-center">
+                    First, scan this QR code using Google Authenticator
+                </div>
+                <form id="frmMob2fa" class="form-horizontal" data-validate="parsley">
+                <div class="list-group-item text-center" style="border-top-width: 0px;">
+                    <div id="mob2faqr">
+                    </div>
+                </div>
+                <div id="savemob2faerror" style="display: none" class="alert alert-danger">
+                    <i class="fa fa-ban-circle"></i><strong>Error</strong> <span id="Span1"></span>
+                </div>
+                <div class="list-group-item text-center">
+                    Type your authenticator code
+                </div>
+                <div class="list-group-item text-center" style="border-top-width: 0px;">
+                    <input id="txtMob2faCode" data-parsley-required="true" class="form-control" autocomplete="off"
+                        name="txtMob2faCode" data-parsley-type="digits" data-parsley-rangelength="[6,6]"
+                        placeholder="Two Factor Code" />
+                </div>
+                <div class="list-group-item text-center" style="border-top-width: 0px;">
+                    <div id="mobsetupprog" class="progress progress-xs m-t-sm" style="display: none">
+                        <div id="mobsetupprogbar" class="progress-bar bg-info" data-toggle="tooltip" data-original-title="0%"
+                            style="width: 0%">
+                        </div>
+                    </div>
+                    <div id="mobsetupprogmess" class="m-sm" style="display: none">
+                    </div>
+                </div>
+                <div class="list-group-item text-center">
+                    <button type="button" class="btn btn-primary btn-block" id="btnMobComplete">
+                        Complete Setup</button>
+                </div>
+                <div class="m-t-md">
+                    <a href="#" class="pull-right cancelmobset">cancel</a>
+                </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <div id="validateemailmob" style="display: none">
+        <section class="m-t-lg wrapper-md animated fadeInDown">
+            <div class="container" style="width: 400px">
+                <div class="list-group-item text-center">
+                    <img src="images/ninki.png" width="200" height="150" />
+                </div>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <p>
+                            Check your email and enter your validation token below</p>
+                        <input id="txtEmailTokenMob" class="form-control" autocomplete="off" data-parsley-rangelength="[64,64]"
+                            data-parsley-type="alphanum" data-parsley-required="true" name="txtEmailToken" placeholder="Enter token" />
+                    </div>
+                    <div class="list-group-item">
+                        <div id="valemailerrormob" class="alert alert-danger" style="display: none">
+                            <i class="fa fa-ban-circle"></i><strong>Error</strong> <span id="valemailerrormessagemob">
+                            </span>
+                        </div>
+                        <button class="btn btn-primary btn-block" type="button" id="btnEmailValidateMob">
+                            Validate</button>
+                    </div>
+                    <div class="list-group-item">
+                        <a id="emailresendmob" href="#">Resend email</a>
+                        <div id="emailresendmessagemob" style="display: none" class="label bg-info">
+                            Email has been resent</div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -207,35 +429,35 @@
                     <form id="frmcreate" data-validate="parsley" class="form-horizontal">
                     <div class="list-group">
                         <div class="list-group-item" style="display: none">
-                            <input id="guid" class="form-control" autocomplete="off" data-required="true" name="guid"
+                            <input id="guid" class="form-control" autocomplete="off" data-parsley-required="true" name="guid"
                                 readonly="readonly" />
                         </div>
                         <div class="list-group-item">
-                            <input id="emailaddress" class="form-control" type="email" autocomplete="off" data-type="email"
-                                data-required="true" name="emailaddress" placeholder="Email" />
+                            <input id="emailaddress" class="form-control" type="email" autocomplete="off" data-parsley-type="email"
+                                data-parsley-required="true" name="emailaddress" placeholder="Email" />
                         </div>
                         <div class="list-group-item">
                             <input id="nickname" autocorrect="off" autocapitalize="off" class="form-control"
-                                autocomplete="off" data-rangelength="[3,20]" data-type="alphanum" data-required="true"
+                                autocomplete="off" data-parsley-rangelength="[3,20]" data-parsley-type="alphanum" data-parsley-required="true"
                                 name="nickname" placeholder="Username" />
                         </div>
                         <div id="pwd-container">
                             <div class="list-group-item">
                                 <div class="pwstrength_viewport_progress">
                                 </div>
-                                <input id="cpassword" class="form-control" data-required="true" data-rangelength="[10,50]"
+                                <input id="cpassword" class="form-control" data-parsley-required="true" data-parsley-rangelength="[10,50]"
                                     name="password" type="password" placeholder="Enter a strong password" />
                             </div>
                             <div class="list-group-item">
-                                <input id="password1" class="form-control" data-equalto-message="Passwords do not match"
-                                    data-required="true" data-equalto="#cpassword" data-rangelength="[10,50]" name="password1"
+                                <input id="password1" class="form-control" data-parsley-equalto-message="Passwords do not match"
+                                    data-parsley-required="true" data-parsley-equalto="#cpassword" data-parsley-rangelength="[10,50]" name="password1"
                                     type="password" placeholder="Confirm your password" />
                             </div>
                             <div class="list-group-item">
                                 <div class="checkbox m-r-xs">
                                     <label class="i-checks">
-                                        <input id="chkterms" data-required-message="You must agree to the Terms of Service"
-                                            data-required="true" name="chkterms" type="checkbox" /><i> </i>&nbsp;I have
+                                        <input id="chkterms" data-parsley-required-message="You must agree to the Terms of Service"
+                                            data-parsley-required="true" name="chkterms" type="checkbox" /><i> </i>&nbsp;I have
                                         read and agree to the <a target="_new" href="https://ninkip2p.com/tos.html">Terms of
                                             Service</a>
                                     </label>
@@ -253,24 +475,16 @@
                             <div id="textMessageCreate">
                             </div>
                             <button type="button" class="btn btn-primary btn-block" id="btnCreate">
-                                Create wallet &raquo;</button>
+                                Create Account</button>
                         </div>
-                        <div id="lnkOpenWallet" class="list-group-item">
-                            <a href="#" id="showopenwalletcr">Sign in &raquo;</a>
+                        <div id="lnkOpenWallet" class="m-t-md">
+                            <a href="#" class="pull-right" id="showopenwalletcr">cancel</a>
                         </div>
                     </div>
                     </form>
                 </section>
             </div>
         </section>
-        <footer id="footer">
-            <div class="text-center padder clearfix">
-                <p>
-                    <small>Ninki<br />
-                        &copy;2014</small>
-                </p>
-            </div>
-        </footer>
     </div>
     <div id="validate2fareset" style="display: none">
         <section id="validate2faresetcontent" class="m-t-lg wrapper-md animated fadeInDown">
@@ -285,8 +499,8 @@
                 </div>
                 <div class="list-group">
                     <div class="list-group-item">
-                        <input id="txt2faResetToken" class="form-control" autocomplete="off" data-rangelength="[64,64]"
-                            data-type="alphanum" data-required="true" name="txtEmailToken" placeholder="Enter token" />
+                        <input id="txt2faResetToken" class="form-control" autocomplete="off" data-parsley-rangelength="[64,64]"
+                            data-parsley-type="alphanum" data-parsley-required="true" name="txtEmailToken" placeholder="Enter token" />
                     </div>
                     <div class="list-group-item">
                         <div id="val2fatokenerror" class="alert alert-danger" style="display: none">
@@ -315,8 +529,8 @@
                         below and we will send your guid to your registered email address.
                     </div>
                     <div class="list-group-item">
-                        <input id="txtlostguidusername" class="form-control" autocomplete="off" data-rangelength="[3,20]"
-                            data-type="alphanum" data-required="true" name="txtlostguidusername" placeholder="Username" />
+                        <input id="txtlostguidusername" class="form-control" autocomplete="off" data-parsley-rangelength="[3,20]"
+                            data-parsley-type="alphanum" data-parsley-required="true" name="txtlostguidusername" placeholder="Username" />
                     </div>
                     <div class="list-group-item">
                         <button class="btn btn-primary btn-block" type="button" id="btnEmailGuid">
@@ -358,20 +572,20 @@
                         <form class="form-horizontal" id="frmopenwallet" data-validate="parsley">
                         <div id="guidsec">
                             <div id="siguid" class="list-group-item">
-                                <input id="guid" class="form-control" autocomplete="off" data-required="true" title=""
+                                <input id="guid" class="form-control" autocomplete="off" data-parsley-required="true" title=""
                                     placeholder="Enter your GUID" />
                             </div>
                             <div id="silguid" class="list-group-item">
-                                <a href="#" id="hforgotguid">forgot your guid?</a>
+                                <a href="#" id="hforgotguid">lost your guid?</a>
                             </div>
                         </div>
                         <div id="sipwd" class="list-group-item">
-                            <input id="password" class="form-control" value="" data-required="true" type="password"
+                            <input id="password" class="form-control" value="" data-parsley-required="true" type="password"
                                 placeholder="Enter your password" title="" />
                         </div>
                         <div id="si2fa" style="display: none">
                             <div class="list-group-item">
-                                <input id="twoFactorCode" autocomplete="off" data-rangelength="[6,6]" name="twoFactorCode"
+                                <input id="twoFactorCode" autocomplete="off" data-parsley-rangelength="[6,6]" name="twoFactorCode"
                                     class="form-control" placeholder="Two Factor Code" /></div>
                             <div class="list-group-item">
                                 <div class="checkbox i-checks">
@@ -389,7 +603,7 @@
                         <div id="sib1" class="list-group-item">
                             <div id="imgopenwaiting">
                             </div>
-                            <button class="btn btn-primary btn-block" type="button" id="btnLogin">
+                            <button class="btn btn-primary btn-block" type="button" id="btnLogin" data-loading-text="working...">
                                 Sign in</button>
                         </div>
                         <div id="sib2" style="display: none" class="list-group-item">
@@ -400,16 +614,16 @@
                         </div>
                         </form>
                         <div id="twofacenable" class="list-group-item" style="display: none">
-                            <a href="#">Enable two factor auth on this device</a>
+                            <a href="#">Require two factor auth on this device</a>
                         </div>
                         <div class="list-group">
                         </div>
                         <div id="signdiff" class="list-group-item">
                             <a href="#" id="btnsigndiff">Sign in with a different account &raquo;</a>
                         </div>
-                        <div id="crwallet" class="list-group-item">
+                        <!--<div id="crwallet" class="list-group-item">
                             <a href="#" id="btncreatewallet">Create a new account &raquo;</a>
-                        </div>
+                        </div>-->
                     </div>
                 </section>
             </div>
@@ -568,15 +782,15 @@
                             <label>
                                 Two Factor Code</label>
                             <div class="input-group m-b">
-                                <input id="txtInvoice2FA" data-type="digits" data-rangelength="[6,6]" type="text"
-                                    data-type="digits" data-rangelength="[6,6]" autocomplete="off" class="form-control nopost" />
+                                <input id="txtInvoice2FA" data-parsley-type="digits" data-parsley-rangelength="[6,6]" type="text"
+                                    data-parsley-type="digits" data-parsley-rangelength="[6,6]" autocomplete="off" class="form-control nopost" />
                             </div>
                         </div>
                         <div id="sendinvbtns">
                             <button type="button" id="btnSendInvoice" class="btn btn-sm btn-default">
                                 Send</button>
                             <button id="btncancelmoneyinv" class="btn btn-xs btn-default pull-right">
-                                cancel</button>
+                                close</button>
                         </div>
                     </div>
                     <div id="sendinvprog" class="progress progress-xs m-sm" style="display: none">
@@ -641,15 +855,15 @@
                         <label>
                             Two Factor Code</label>
                         <div class="input-group m-b">
-                            <input id="txtFriendSend2FA" data-type="digits" data-rangelength="[6,6]" type="text"
-                                data-type="digits" data-rangelength="[6,6]" autocomplete="off" class="form-control nopost" />
+                            <input id="txtFriendSend2FA" data-parsley-type="digits" data-parsley-rangelength="[6,6]" type="text"
+                                data-parsley-type="digits" data-parsley-rangelength="[6,6]" autocomplete="off" class="form-control nopost" />
                         </div>
                     </div>
                     <div id="sendnetbtns">
                         <button type="button" id="btnSendToFriend" class="btn btn-sm btn-default">
                             Send</button>
                         <button id="btncancelmoneynet" class="btn btn-xs btn-default pull-right">
-                            cancel</button>
+                            close</button>
                     </div>
                     <div id="sendfriendprog" class="progress progress-xs m-t-sm" style="display: none">
                         <div id="sendfriendprogstatus" class="progress-bar bg-info" data-toggle="tooltip"
@@ -712,15 +926,15 @@
                         <label>
                             Two Factor Code</label>
                         <div class="input-group m-b">
-                            <input id="txtSendTwoFactor" data-type="digits" data-rangelength="[6,6]" type="text"
-                                data-type="digits" data-rangelength="[6,6]" autocomplete="off" class="form-control nopost" />
+                            <input id="txtSendTwoFactor" data-parsley-type="digits" data-parsley-rangelength="[6,6]" type="text"
+                                data-parsley-type="digits" data-parsley-rangelength="[6,6]" autocomplete="off" class="form-control nopost" />
                         </div>
                     </div>
                     <div id="sendstdbtns">
                         <button type="button" id="btnsendmoneystd" class="btn btn-sm btn-default">
                             Send</button>
                         <button id="btncancelmoneystd" class="btn btn-xs btn-default pull-right">
-                            cancel</button>
+                            close</button>
                     </div>
                     <div id="sendstdprog" class="progress progress-xs m-t-sm" style="display: none">
                         <div id="sendstdprogstatus" class="progress-bar bg-info" data-toggle="tooltip" data-original-title="0%"
@@ -983,7 +1197,7 @@
                     </div>
                     <div class="form-group">
                         <p>
-                            <strong>Or</strong> write down your hot key phrase</p>
+                            <strong>Or</strong> write down your online key phrase</p>
                     </div>
                     <div class="form-group">
                         <div class="list-group-item bg-warning">
@@ -1005,7 +1219,7 @@
                     </div>
                     <div id="hotmigcont" style="display: none">
                         <div class="form-group">
-                            <input id="hotmig2fa" autocomplete="off" name="hotmig2fa" data-rangelength="[6,6]"
+                            <input id="hotmig2fa" autocomplete="off" name="hotmig2fa" data-parsley-rangelength="[6,6]"
                                 class="form-control" placeholder="Two Factor Code" /></div>
                         <div class="form-group">
                             <button id="btnMigHotKey" type="button" class="btn btn-sm btn-default">
@@ -1035,7 +1249,7 @@
                                 <div class="form-group">
                                     <p>
                                         <input type="text" id="txt2faVerifyToken" class="form-control" autocomplete="off"
-                                            data-rangelength="[64,64]" data-required="true" placeholder="Enter token" />
+                                            data-parsley-rangelength="[64,64]" data-parsley-required="true" placeholder="Enter token" />
                                     </p>
                                     <p>
                                         <button id="btn2faVerifyEmail" type="button" class="btn btn-sm btn-default">
@@ -1055,9 +1269,7 @@
                                         <h3>
                                             Two-factor QR code</h3>
                                         <p>
-                                            First, scan this QR code with Google Authenticator or <a target="_new" href="https://www.authy.com">
-                                                Authy</a> Make sure you enable backups in the Authy app and take a manual backup
-                                            for your Google Authenticator
+                                            Scan this QR code with Google Authenticator.
                                         </p>
                                         <p>
                                             <div id="imgsettings2fa">
@@ -1067,7 +1279,7 @@
                                             <p>
                                                 Type your authenticator code</p>
                                             <p>
-                                                <input id="txtsettings2fa" data-type="digits" data-required="true" data-rangelength="[6,6]"
+                                                <input id="txtsettings2fa" data-parsley-type="digits" data-parsley-required="true" data-parsley-rangelength="[6,6]"
                                                     autocomplete="off" name="twoFactorCodeCheck" />
                                             </p>
                                             <div id="savetwofactorerror" style="display: none" class="alert alert-danger m-lg">
@@ -1109,8 +1321,8 @@
                     <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
                         <li id="libackupcodes" style="display: none">
                             <div class="alert alert-danger m-t-xs">
-                                <button type="button" class="close" data-dismiss="alert">
-                                    ×</button>
+                                <!--<button type="button" class="close" data-dismiss="alert">
+                                    x</button>-->
                                 <i class="fa fa-ban-circle"></i><strong>Important</strong> Setup your two factor
                                 authenticator backup codes&nbsp;&nbsp;
                             </div>
@@ -1134,7 +1346,7 @@
                                     <header class="panel-heading bg-light">
                                         <ul class="nav nav-tabs nav-justified">
                                             <li class="active"><a href="#dashboard" data-toggle="tab">Dashboard</a> </li>
-                                            <li><a id="hnetwork" href="#network" data-toggle="tab">Network</a> </li>
+                                            <li><a id="hnetwork" href="#network" data-toggle="tab">Contacts</a> </li>
                                             <li><a href="#transactions" data-toggle="tab">Transactions</a> </li>
                                             <li><a id="hinvoices" href="#invoices" data-toggle="tab">Invoices</a> </li>
                                             <li><a id="hsettings" href="#settings" data-toggle="tab">Settings</a> </li>
@@ -1181,7 +1393,7 @@
                                                                                             <div class="m-b-sm">
                                                                                                 Change Your Status</div>
                                                                                             <input id="txtStatusText" class="form-control" maxlength="25" autocomplete="off"
-                                                                                                data-required="true" name="statustext" />
+                                                                                                data-parsley-required="true" name="statustext" />
                                                                                         </div>
                                                                                     </div>
                                                                                     <div id="profnmests" class="h4 m-t m-b-xs text-center">
@@ -1192,7 +1404,7 @@
                                                                                     </div>
                                                                                     <div class="m-t">
                                                                                         <span class="badge bg-success"></span><i class="fa fa-lock icon-muted"></i>&nbsp;Your
-                                                                                        Validation phrase
+                                                                                        Identity Validation Code
                                                                                         <div class="fingerprint alert-success m-t-sm" id="codeForFriend">
                                                                                         </div>
                                                                                     </div>
@@ -1287,7 +1499,8 @@
                                                                             <button type="button" id="btngenaddr" class="btn btn-sm btn-default">
                                                                                 Create New Address</button>
                                                                             </form>
-                                                                            <div id="requestaddress" style="display: none" class="clearfix text-center m-t">
+                                                                            <div id="requestaddress" class="clearfix text-center m-t">
+                                                                                <div id="craddrspin"></div>
                                                                                 <div id="requestaddressqr" class="h3 m-t-xs m-b-xs">
                                                                                 </div>
                                                                                 <div id="requestaddresstxt" style="word-wrap: break-word;" class="m-t-xs m-b-xs">
@@ -1374,206 +1587,240 @@
                                                 </section>
                                             </div>
                                             <div class="tab-pane" id="network">
-                                                <div class="col-sm-3 wrapper-xxs">
-                                                    <div id="myfriends" class="myautoscroll">
-                                                    </div>
-                                                </div>
-                                                <!--<a id="friendpanel" style="display: block;position: relative;top: -25px;visibility: hidden;"></a>-->
-                                                <div id="friendempty" class="col-sm-4 m-xl wrapper-xl text-center">
-                                                    <img src="images/arrow_left.png" />
-                                                    <div class="h4 m-t m-b-xs">
-                                                        Select a contact from your list</div>
-                                                </div>
-                                                <div id="pnlfriend" class="col-sm-4 wrapper-xxs" style="display: none">
-                                                    <section class="panel panel-default">
+                                                <div class="col-lg-12 wrapper-xxs">
+                                                    <!--<a id="friendpanel" style="display: block;position: relative;top: -25px;visibility: hidden;"></a>-->
+                                                    <div id="networkpholder" style="display: none">
                                                         <div class="panel-body">
-                                                            <div class="col-xs-6 text-center">
-                                                                <div class="inline">
-                                                                    <div class="easypiechart" data-percent="75" data-line-width="5" data-bar-color="#4cc0c1"
-                                                                        data-track-color="#f5f5f5" data-scale-color="false" data-size="134" data-line-cap='butt'
-                                                                        data-animate="1000">
-                                                                        <div class="thumb-lg">
-                                                                            <img id="imgSelectedFriend" src="images/avatar/256px/Avatar-01.png" class="img-circle">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="h4 m-t m-b-xs">
-                                                                        <div id="friendSelectedName">
-                                                                        </div>
-                                                                    </div>
-                                                                    <small class="text-muted m-b">
-                                                                        <div id="friendSelectedStatus">
-                                                                        </div>
-                                                                    </small>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-4 text-center">
-                                                                <div id="isvalidated" class="btn btn-success btn-icon btn-rounded m-t-sm" style="display: none">
-                                                                    <i class="fa fa-check-square"></i>
-                                                                </div>
-                                                                <div class="clear">
-                                                                </div>
-                                                                <div id="isreceive" class="btn btn-primary btn-icon btn-rounded m-t-sm" style="display: none">
-                                                                    <i class="fa fa-arrow-left"></i>
-                                                                </div>
-                                                                <div class="clear">
-                                                                </div>
-                                                                <div id="issend" class="btn btn-primary btn-icon btn-rounded m-t-sm" style="display: none">
-                                                                    <i class="fa fa-arrow-right"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-4 m-t-lg text-center">
-                                                                <div id="netcatoptions">
-                                                                </div>
+                                                            <div class="h2 font-thin">
+                                                                Pay your</div>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div class="col-sm-6 h2 font-thin pull-left" style="line-height: 1.5em">
+                                                                Friends, Contacts and Associates with a single click.
                                                             </div>
                                                         </div>
-                                                    </section>
-                                                    <section class="panel panel-default" id="networksend" style="display: none">
-                                                        <header class="panel-heading bg-light no-border">
-                                                            <div class="clearfix">
-                                                                <div class="clear">
-                                                                    <div class="h3 m-t-xs m-b-xs">
-                                                                        Send</div>
-                                                                    <small class="text-muted">To <span id="friendSelectedNameTo"></span></small>
-                                                                </div>
+                                                        <div class="panel-body">
+                                                            <div class="col-sm-6 h5 font-thin" style="line-height: 1.5em">
+                                                                Connect with people you know on Ninki and transact over a secure communication channel
                                                             </div>
-                                                        </header>
-                                                        <div class="list-group no-radius alt">
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div class="col-sm-6 h5 font-thin" style="line-height: 1.5em">
+                                                                Remove the need to exchange Bitcoin addresses with your contacts
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div class="col-sm-6 h5 font-thin" style="line-height: 1.5em">
+                                                                Send and receive invoices instantly and securely
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div class="col-sm-6 h4 font-thin text-info-dk" style="line-height: 1.5em">
+                                                                <i class="fa  fa-caret-right"></i>&nbsp;Add Contacts and accept requests from your
+                                                                Dashboard
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3 wrapper-xxs">
+                                                        <div id="myfriends" class="myautoscroll">
+                                                        </div>
+                                                    </div>
+                                                    <div id="friendempty" class="col-sm-4 m-xl wrapper-xl text-center" style="display: none">
+                                                        <img src="images/arrow_left.png" />
+                                                        <div class="h4 m-t m-b-xs">
+                                                            Select a contact from your list</div>
+                                                    </div>
+                                                    <div id="pnlfriend" class="col-sm-4 wrapper-xxs" style="display: none">
+                                                        <section class="panel panel-default">
                                                             <div class="panel-body">
-                                                                <div id="friendvalreq" class="alert alert-info" style="display: none; margin-bottom: 8px;">
-                                                                    <i class="fa fa-info-sign"></i>You must validate this contact in order to send funds
-                                                                    to them</div>
-                                                                <form role="form">
-                                                                <label>
-                                                                    Amount</label>
-                                                                <div class="input-group m-b">
-                                                                    <div class="input-group-btn">
-                                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                                            <span id="netselunit"></span><span class="caret"></span>
-                                                                        </button>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li><a id="netselcu" href="#"><span id="netsendcunit"></span></a></li>
-                                                                            <li><a id="netsellc" href="#"><span id="netsendlcurr"></span></a></li>
-                                                                        </ul>
+                                                                <div class="col-xs-6 text-center">
+                                                                    <div class="inline">
+                                                                        <div class="easypiechart" data-percent="75" data-line-width="5" data-bar-color="#4cc0c1"
+                                                                            data-track-color="#f5f5f5" data-scale-color="false" data-size="134" data-line-cap='butt'
+                                                                            data-animate="1000">
+                                                                            <div class="thumb-lg">
+                                                                                <img id="imgSelectedFriend" src="images/avatar/256px/Avatar-01.png" class="img-circle">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="h4 m-t m-b-xs">
+                                                                            <div id="friendSelectedName">
+                                                                            </div>
+                                                                        </div>
+                                                                        <small class="text-muted m-b">
+                                                                            <div id="friendSelectedStatus">
+                                                                            </div>
+                                                                        </small>
                                                                     </div>
-                                                                    <!-- /btn-group -->
-                                                                    <input id="friendAmount" type="text" min="0" autocomplete="off" class="form-control nopost" />
-                                                                    <span id="ccynetamt" class="input-group-addon"></span>
-                                                                    <input id="hdfriendAmount" type="hidden" />
                                                                 </div>
-                                                                <button type="button" id="btnconfmoneynet" class="btn btn-sm btn-default">
-                                                                    Send</button>
-                                                                </form>
+                                                                <div class="col-xs-4 text-center">
+                                                                    <div id="isvalidated" class="btn btn-success btn-icon btn-rounded m-t-sm" style="display: none">
+                                                                        <i class="fa fa-check-square"></i>
+                                                                    </div>
+                                                                    <div class="clear">
+                                                                    </div>
+                                                                    <div id="isreceive" class="btn btn-primary btn-icon btn-rounded m-t-sm" style="display: none">
+                                                                        <i class="fa fa-arrow-left"></i>
+                                                                    </div>
+                                                                    <div class="clear">
+                                                                    </div>
+                                                                    <div id="issend" class="btn btn-primary btn-icon btn-rounded m-t-sm" style="display: none">
+                                                                        <i class="fa fa-arrow-right"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xs-4 m-t-lg text-center">
+                                                                    <div id="netcatoptions">
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-sm-5 wrapper-xxs">
-                                                    <div id="networkvalidate" style="display: none">
-                                                        <section class="panel panel-default m-b-lg">
+                                                        </section>
+                                                        <section class="panel panel-default" id="networksend" style="display: none">
                                                             <header class="panel-heading bg-light no-border">
                                                                 <div class="clearfix">
                                                                     <div class="clear">
                                                                         <div class="h3 m-t-xs m-b-xs">
-                                                                            Validate</div>
-                                                                        <small class="text-muted"><span id="validateusername"></span></small>
+                                                                            Send</div>
+                                                                        <small class="text-muted">To <span id="friendSelectedNameTo"></span></small>
                                                                     </div>
                                                                 </div>
                                                             </header>
-                                                            <div class="panel-body">
-                                                                <div id="validatesuccess" class="alert alert-success" style="display: none">
-                                                                    <i class="fa fa-ok-sign"></i><strong>Validation Successful</strong> You successfully
-                                                                    validated <span id="validateusername4"></span>
-                                                                </div>
-                                                                <div id="validatefail" class="alert alert-warning" style="display: none">
-                                                                    <i class="fa fa-info-sign"></i><strong>Validation Failed</strong> Make sure&nbsp;<span
-                                                                        id="validateusername5"></span>provided you with the correct code</div>
-                                                                <div id="validateform" class="list-group no-radius alt m-b-n">
+                                                            <div class="list-group no-radius alt">
+                                                                <div class="panel-body">
+                                                                    <div id="friendvalreq" class="alert alert-info" style="display: none; margin-bottom: 8px;">
+                                                                        <i class="fa fa-info-sign"></i>You must validate this contact in order to send funds
+                                                                        to them</div>
                                                                     <form role="form">
-                                                                    <p>
-                                                                        <strong><span id="validateusername3"></span></strong>&nbsp;needs to send you their
-                                                                        Validation phrase so you can enter it in the box below.</p>
-                                                                    <div class="form-group">
-                                                                        <input id="txtCode" autocomplete="off" placeholder="Enter Validation Phrase" type="text"
-                                                                            class="form-control nopost" placeholder="">
+                                                                    <label>
+                                                                        Amount</label>
+                                                                    <div class="input-group m-b">
+                                                                        <div class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                                                <span id="netselunit"></span><span class="caret"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu">
+                                                                                <li><a id="netselcu" href="#"><span id="netsendcunit"></span></a></li>
+                                                                                <li><a id="netsellc" href="#"><span id="netsendlcurr"></span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <!-- /btn-group -->
+                                                                        <input id="friendAmount" type="text" min="0" autocomplete="off" class="form-control nopost" />
+                                                                        <span id="ccynetamt" class="input-group-addon"></span>
+                                                                        <input id="hdfriendAmount" type="hidden" />
                                                                     </div>
-                                                                    <div id="verifyspinner">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <button id="btnVerify" type="button" class="btn btn-sm btn-default">
-                                                                            Validate</button>
-                                                                    </div>
+                                                                    <button type="button" id="btnconfmoneynet" class="btn btn-sm btn-default">
+                                                                        Send</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div id="pnlfriendinv" style="display: none">
-                                                        <section class="panel panel-default">
-                                                            <header class="panel-heading bg-light">
-                                                                <ul class="nav nav-tabs pull-right">
-                                                                    <li class="active"><a href="#messages-3" data-toggle="tab"><i class="fa fa-list text-muted">
-                                                                    </i>&nbsp;for me</a> </li>
-                                                                    <li><a href="#profile-3" data-toggle="tab"><i class="fa fa-list text-muted"></i>&nbsp;by
-                                                                        me</a> </li>
-                                                                    <li>
-                                                                        <button type="button" id="btnCreateInvFriend" style="line-height: 27px;" class="btn btn-info">
-                                                                            <i class="fa fa-pencil"></i>&nbsp;<span class="text">Create</span>
-                                                                        </button>
-                                                                    </li>
-                                                                </ul>
-                                                                <span class="hidden-sm">Invoices</span>
-                                                            </header>
-                                                            <div class="panel-body" style="padding-left: 0; padding-right: 0">
-                                                                <div class="tab-content myautoscroll-mini">
-                                                                    <div class="tab-pane active" id="messages-3">
-                                                                        <div class="table-responsive">
-                                                                            <table id="tblnetinvforme" class="table b-t b-light m-b-n">
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        <th>
-                                                                                            Date
-                                                                                        </th>
-                                                                                        <th>
-                                                                                            Status
-                                                                                        </th>
-                                                                                        <th>
-                                                                                            On
-                                                                                        </th>
-                                                                                        <th>
-                                                                                        </th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                </tbody>
-                                                                            </table>
+                                                    <div class="col-sm-5 wrapper-xxs">
+                                                        <div id="networkvalidate" style="display: none">
+                                                            <section class="panel panel-default m-b-lg">
+                                                                <header class="panel-heading bg-light no-border">
+                                                                    <div class="clearfix">
+                                                                        <div class="clear">
+                                                                            <div class="h3 m-t-xs m-b-xs">
+                                                                                Validate</div>
+                                                                            <small class="text-muted"><span id="validateusername"></span></small>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="tab-pane myautoscroll-mini" id="profile-3">
-                                                                        <div class="table-responsive">
-                                                                            <table id="tblnetinvbyme" class="table b-t b-light m-b-n">
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        <th>
-                                                                                            Date
-                                                                                        </th>
-                                                                                        <th>
-                                                                                            Status
-                                                                                        </th>
-                                                                                        <th>
-                                                                                            On
-                                                                                        </th>
-                                                                                        <th>
-                                                                                        </th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                </tbody>
-                                                                            </table>
+                                                                </header>
+                                                                <div class="panel-body">
+                                                                    <div id="validatesuccess" class="alert alert-success" style="display: none">
+                                                                        <i class="fa fa-ok-sign"></i><strong>Validation Successful</strong> You successfully
+                                                                        validated <span id="validateusername4"></span>
+                                                                    </div>
+                                                                    <div id="validatefail" class="alert alert-warning" style="display: none">
+                                                                        <i class="fa fa-info-sign"></i><strong>Validation Failed</strong> Make sure&nbsp;<span
+                                                                            id="validateusername5"></span>provided you with the correct code</div>
+                                                                    <div id="validateform" class="list-group no-radius alt m-b-n">
+                                                                        <form role="form">
+                                                                        <p>
+                                                                            <strong><span id="validateusername3"></span></strong>&nbsp;needs to send you their
+                                                                            Validation phrase so you can enter it in the box below.</p>
+                                                                        <div class="form-group">
+                                                                            <input id="txtCode" autocomplete="off" placeholder="Enter Validation Phrase" type="text"
+                                                                                class="form-control nopost" placeholder="">
+                                                                        </div>
+                                                                        <div id="verifyspinner">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <button id="btnVerify" type="button" class="btn btn-sm btn-default">
+                                                                                Validate</button>
+                                                                        </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div id="pnlfriendinv" style="display: none">
+                                                            <section class="panel panel-default">
+                                                                <header class="panel-heading bg-light">
+                                                                    <ul class="nav nav-tabs pull-right">
+                                                                        <li class="active"><a href="#messages-3" data-toggle="tab"><i class="fa fa-list text-muted">
+                                                                        </i>&nbsp;for me</a> </li>
+                                                                        <li><a href="#profile-3" data-toggle="tab"><i class="fa fa-list text-muted"></i>&nbsp;by
+                                                                            me</a> </li>
+                                                                        <li>
+                                                                            <button type="button" id="btnCreateInvFriend" style="line-height: 27px;" class="btn btn-info">
+                                                                                <i class="fa fa-pencil"></i>&nbsp;<span class="text">Create</span>
+                                                                            </button>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <span class="hidden-sm">Invoices</span>
+                                                                </header>
+                                                                <div class="panel-body" style="padding-left: 0; padding-right: 0">
+                                                                    <div class="tab-content myautoscroll-mini">
+                                                                        <div class="tab-pane active" id="messages-3">
+                                                                            <div class="table-responsive">
+                                                                                <table id="tblnetinvforme" class="table b-t b-light m-b-n">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>
+                                                                                                Date
+                                                                                            </th>
+                                                                                            <th>
+                                                                                                Status
+                                                                                            </th>
+                                                                                            <th>
+                                                                                                On
+                                                                                            </th>
+                                                                                            <th>
+                                                                                            </th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tab-pane myautoscroll-mini" id="profile-3">
+                                                                            <div class="table-responsive">
+                                                                                <table id="tblnetinvbyme" class="table b-t b-light m-b-n">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>
+                                                                                                Date
+                                                                                            </th>
+                                                                                            <th>
+                                                                                                Status
+                                                                                            </th>
+                                                                                            <th>
+                                                                                                On
+                                                                                            </th>
+                                                                                            <th>
+                                                                                            </th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </section>
+                                                            </section>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1935,7 +2182,7 @@
                                                                                     Quantity
                                                                                 </th>
                                                                                 <th width="200" align="left">
-                                                                                    Price
+                                                                                    Amount
                                                                                 </th>
                                                                                 <th>
                                                                                 </th>
@@ -1974,7 +2221,7 @@
                                                                                     <span id="tax"></span>
                                                                                 </th>
                                                                                 <td>
-                                                                                    <input id="txtTax" value="10%" type="text" class="form-control" data-type="number" />
+                                                                                    <input id="txtTax" value="10%" type="text" class="form-control" data-parsley-type="number" />
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -2000,7 +2247,7 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane" id="settings">
-                                                <div class="col-sm-6 wrapper-xxs">
+                                                <div class="col-sm-8 wrapper-xxs">
                                                     <section class="panel panel-default">
                                                         <header class="panel-heading bg-light">
                                                             <ul class="nav nav-tabs">
@@ -2026,8 +2273,7 @@
                                                                                 Update your Settings
                                                                             </div>
                                                                             <div class="panel-body">
-                                                                                <form id="frmsettings" class="bs-example form-horizontal" data-validate="parsley"
-                                                                                data-parsley-excluded="input[type=checkbox]">
+                                                                                <form id="frmsettings" class="bs-example form-horizontal" data-validate="parsley" data-parsley-excluded="input[type=checkbox]">
                                                                                 <div class="b-b line-dashed">
                                                                                     <div class="form-group">
                                                                                         <label class="col-lg-5 control-label">
@@ -2045,7 +2291,7 @@
                                                                                         <label class="col-lg-5 control-label">
                                                                                             Daily Transaction Limit (<span class="coinunit"></span>)</label>
                                                                                         <div class="col-lg-5">
-                                                                                            <input id="DailyTransactionLimit" type="text" class="form-control" data-type="number"
+                                                                                            <input id="DailyTransactionLimit" type="text" class="form-control" data-parsley-required="true"  data-parsley-type="number"
                                                                                                 placeholder="Daily Transaction Limit">
                                                                                         </div>
                                                                                     </div>
@@ -2053,7 +2299,7 @@
                                                                                         <label class="col-lg-5 control-label">
                                                                                             Single Transaction Limit (<span class="coinunit"></span>)</label>
                                                                                         <div class="col-lg-5">
-                                                                                            <input id="SingleTransactionLimit" type="text" class="form-control" data-type="number"
+                                                                                            <input id="SingleTransactionLimit" type="text" class="form-control" data-parsley-required="true" data-parsley-type="number"
                                                                                                 placeholder="Single Transaction Limit">
                                                                                         </div>
                                                                                     </div>
@@ -2061,7 +2307,7 @@
                                                                                         <label class="col-lg-5 control-label">
                                                                                             Number Of Transactions Per Day</label>
                                                                                         <div class="col-lg-5">
-                                                                                            <input id="NoOfTransactionsPerDay" type="text" class="form-control" data-type="digits"
+                                                                                            <input id="NoOfTransactionsPerDay" type="text" class="form-control" data-parsley-required="true" data-parsley-type="digits"
                                                                                                 placeholder="Number Of Transactions Per Day">
                                                                                         </div>
                                                                                     </div>
@@ -2069,7 +2315,7 @@
                                                                                         <label class="col-lg-5 control-label">
                                                                                             Number Of Transactions Per Hour</label>
                                                                                         <div class="col-lg-5">
-                                                                                            <input id="NoOfTransactionsPerHour" type="text" class="form-control" data-type="digits"
+                                                                                            <input id="NoOfTransactionsPerHour" type="text" class="form-control" data-parsley-required="true" data-parsley-type="digits"
                                                                                                 placeholder="Number Of Transactions Per Hour">
                                                                                         </div>
                                                                                     </div>
@@ -2078,7 +2324,7 @@
                                                                                     <label class="col-lg-5 control-label">
                                                                                         Inactivity</label>
                                                                                     <div class="col-lg-5">
-                                                                                        <input id="Inactivity" type="text" class="form-control" data-type="digits" placeholder="Inactivity"><span
+                                                                                        <input id="Inactivity" type="text" class="form-control" data-parsley-type="digits" data-parsley-required="true" placeholder="Inactivity"><span
                                                                                             class="help-block m-b-none">Number of minutes until session timeout</span>
                                                                                     </div>
                                                                                 </div>
@@ -2086,7 +2332,7 @@
                                                                                     <label class="col-lg-5 control-label">
                                                                                         Miners Fee</label>
                                                                                     <div class="col-lg-5">
-                                                                                        <input id="MinersFee" type="text" class="form-control" data-type="number" placeholder="Miners Fee">
+                                                                                        <input id="MinersFee" type="text" class="form-control" data-parsley-type="number" data-parsley-required="true" placeholder="Miners Fee">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">
@@ -2107,7 +2353,7 @@
                                                                                                 <li><a href="#">
                                                                                                     <input type="radio" name="d-s-r" id="cuuBTC" />&mu;BTC</a> </li>
                                                                                             </ul>
-                                                                                            <input id="CoinUnit" type="hidden" type="text" data-rangelength="[3,4]" class="form-control"
+                                                                                            <input id="CoinUnit" type="hidden" type="text"  data-parsley-rangelength="[3,4]" class="form-control"
                                                                                                 placeholder="Coin Unit">
                                                                                         </div>
                                                                                     </div>
@@ -2130,7 +2376,7 @@
                                                                                                 <li><a href="#">
                                                                                                     <input type="radio" id="lcCNY" name="d-s-r" />CNY</a> </li>
                                                                                             </ul>
-                                                                                            <input id="LocalCurrency" type="hidden" type="text" data-rangelength="[3,3]" class="form-control"
+                                                                                            <input id="LocalCurrency" type="hidden" type="text" data-parsley-rangelength="[3,3]" class="form-control"
                                                                                                 placeholder="Local Currency">
                                                                                         </div>
                                                                                     </div>
@@ -2161,7 +2407,7 @@
                                                                                         <strong>Enter Two Factor Code</strong>
                                                                                     </label>
                                                                                     <div class="col-lg-5">
-                                                                                        <input id="txtTwoFactorCodeForSettings" class="form-control" data-type="digits" data-rangelength="[6,6]"
+                                                                                        <input id="txtTwoFactorCodeForSettings" class="form-control" data-parsley-type="digits" data-parsley-required="true" data-parsley-rangelength="[6,6]"
                                                                                             autocomplete="off" name="twoFactorCodeForSettings" />
                                                                                     </div>
                                                                                 </div>
@@ -2191,7 +2437,7 @@
                                                                                     <label>
                                                                                         Device Name</label>
                                                                                     <div class="">
-                                                                                        <input id="txtAddDevice" type="text" class="form-control" data-type="text" placeholder="e.g. My Android">
+                                                                                        <input id="txtAddDevice" type="text" class="form-control" data-parsley-required="true" placeholder="e.g. My Android">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">
@@ -2242,7 +2488,7 @@
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div class="col-lg-8 m-t-sm">
-                                                                                                            <input id="twoFactorCodeFor2fa" class="form-control" data-type="digits" data-rangelength="[6,6]"
+                                                                                                            <input id="twoFactorCodeFor2fa" class="form-control" data-parsley-required="true" data-parsley-type="digits" data-parsley-rangelength="[6,6]"
                                                                                                                 autocomplete="off" name="twoFactorCodeFor2fa" placeholder="Enter Current Two Factor Code" /></div>
                                                                                                         <div class="col-lg-8 m-t-sm">
                                                                                                             <button id="btnSetupTwoFactor" type="button" class="btn btn-sm btn-default">
@@ -2398,12 +2644,12 @@
                                                                                                         <div class="panel-body">
                                                                                                             <div id="pnlBackupBtn" class="panel-body">
                                                                                                                 <div class="col-lg-10">
-                                                                                                                    <div id="txt2faForBackupError" style="display: none" class="alert alert-danger">
+                                                                                                                    <div id="txt2faForBackupError" style="display: none" class="alert alert-danger m-b-sm">
                                                                                                                         <i class="fa fa-ban-circle"></i><strong>Error</strong> Invalid two factor code
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                                 <div class="col-lg-10">
-                                                                                                                    <input id="txt2faForBackup" class="form-control" data-type="digits" data-rangelength="[6,6]"
+                                                                                                                    <input id="txt2faForBackup" class="form-control"  data-parsley-required="true" data-parsley-type="digits" data-parsley-rangelength="[6,6]"
                                                                                                                         autocomplete="off" name="twoFactorCodeForBackup" placeholder="Enter Two Factor Code" /></div>
                                                                                                                 <div class="col-lg-12 m-t-sm">
                                                                                                                     <button id="btnBackupCodes" type="button" class="btn btn-sm btn-default">
@@ -2536,7 +2782,7 @@
                                                                             Change your Password
                                                                         </div>
                                                                         <div class="panel-body">
-                                                                            <form id="frmpwdchange" data-validate="parsley" class="form-horizontal" data-parsley-excluded="input[type=checkbox]">
+                                                                            <form id="frmpwdchange" data-parsley-validate="parsley" class="form-horizontal" data-parsley-excluded="input[type=checkbox]">
                                                                             <div class="col-lg-6">
                                                                                 <div id="chngpwssuc" style="display: none">
                                                                                     <div class="alert alert-success m-sm">
@@ -2544,9 +2790,9 @@
                                                                                             password was changed.</span>
                                                                                     </div>
                                                                                     <div class="form-group">
-                                                                                        Click 'Save Backup' below to download an file of your online private key, encrypted
-                                                                                        with your new password. You should store this file on a backup drive or using a
-                                                                                        cloud storage service.
+                                                                                        Click 'Save Backup' below to save a file of your online private key, encrypted with
+                                                                                        your new password. You should store this file on a backup drive or using a cloud
+                                                                                        storage service.
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <a id="btnSaveBackupP" href="#" class="btn btn-default"><i class="fa fa-save"></i>&nbsp;Save
@@ -2557,8 +2803,8 @@
                                                                                     <div class="form-group">
                                                                                         <label>
                                                                                             Current Password</label>
-                                                                                        <input id="oldpwd" class="form-control" autocomplete="off" data-rangelength="[10,20]"
-                                                                                            data-required="true" type="password" name="oldpwd" placeholder="Enter current password" />
+                                                                                        <input id="oldpwd" class="form-control" autocomplete="off" data-parsley-rangelength="[10,20]"
+                                                                                            data-parsley-required="true" type="password" name="oldpwd" placeholder="Enter current password" />
                                                                                     </div>
                                                                                     <div id="newpwd-container">
                                                                                         <div class="newpwstrength_viewport_progress">
@@ -2566,14 +2812,14 @@
                                                                                         <div class="form-group">
                                                                                             <label>
                                                                                                 New Password</label>
-                                                                                            <input id="newpassword1" class="form-control" data-required="true" data-rangelength="[10,50]"
+                                                                                            <input id="newpassword1" class="form-control" data-parsley-required="true" data-parsley-rangelength="[10,50]"
                                                                                                 name="newpassword1" type="password" placeholder="Enter new password" />
                                                                                         </div>
                                                                                         <div class="form-group">
                                                                                             <label>
                                                                                                 Confirm New Password</label>
-                                                                                            <input id="newpassword2" class="form-control" data-equalto-message="Passwords do not match"
-                                                                                                data-required="true" data-equalto="#newpassword1" data-rangelength="[10,50]"
+                                                                                            <input id="newpassword2" class="form-control" data-parsley-equalto-message="Passwords do not match"
+                                                                                                data-parsley-required="true" data-parsley-equalto="#newpassword1" data-parsley-rangelength="[10,50]"
                                                                                                 name="newpassword2" type="password" placeholder="Confirm new password" />
                                                                                         </div>
                                                                                         <div id="TwoFactorCodeForChangePwd" class="form-group">
@@ -2581,8 +2827,8 @@
                                                                                                 <strong>Enter Two Factor Code</strong>
                                                                                             </label>
                                                                                             <div>
-                                                                                                <input id="txtTwoFactorCodeForChangePwd" class="form-control" data-type="digits"
-                                                                                                    type="text" data-rangelength="[6,6]" autocomplete="off" name="twoFactorCodeForChangePwd" />
+                                                                                                <input id="txtTwoFactorCodeForChangePwd" class="form-control" data-parsley-required="true" data-parsley-type="digits"
+                                                                                                    type="text" data-parsley-rangelength="[6,6]" autocomplete="off" name="twoFactorCodeForChangePwd" />
                                                                                             </div>
                                                                                         </div>
                                                                                         <div id="chngpwerr" style="display: none" class="alert alert-danger m-sm">
@@ -2616,7 +2862,7 @@
                                                                             <div class="col-lg-6">
                                                                                 <div>
                                                                                     <div class="form-group">
-                                                                                        Click 'Save Backup' below to download an encrypted file of your online private key.
+                                                                                        Click 'Save Backup' below to save an encrypted file of your online private key.
                                                                                         You should store this file on a backup drive or using a cloud storage service.
                                                                                     </div>
                                                                                     <div class="form-group">
@@ -2640,7 +2886,7 @@
                                                                                         your online private key. This is not encypted so ensure that it is stored securely.
                                                                                     </label>
                                                                                     <div>
-                                                                                        <input id="displaykeys2fa" class="form-control" data-type="digits" type="text" data-rangelength="[6,6]"
+                                                                                        <input id="displaykeys2fa" class="form-control" data-parsley-type="digits" type="text" data-parsley-rangelength="[6,6]"
                                                                                             autocomplete="off" name="twoFactorCodeForChangePwd" placeholder="Enter Two Factor Code" />
                                                                                     </div>
                                                                                 </div>
@@ -2652,7 +2898,7 @@
                                                                                 </div>
                                                                                 <div class="list-group">
                                                                                     <p>
-                                                                                        Hot wallet phrase- write this down</p>
+                                                                                        Online key phrase- write this down</p>
                                                                                     <div class="list-group-item text-center bg-warning" id="secdisphrase">
                                                                                     </div>
                                                                                 </div>

@@ -1,7 +1,7 @@
 {
-  "name": "Ninki Wallet",
-  "description": "Ninki Wallet",
-  "version": "1.2",
+  "name": "NinkiWallet",
+  "description": "NinkiWallet",
+  "version": "1.4",
   "manifest_version": 2,
   "app": {
     "background": {
